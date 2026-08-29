@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "product": "community",
+  "version": "v0.1.0-beta",
+  "tag": "v0.1.0-beta",
+  "publishedAt": "2026-08-24T19:43:24.000Z",
+  "source": "legacy-release",
+  "sourceUrl": "https://github.com/dutu-dev/TuffNode-Community/releases/tag/v0.1.0-beta",
+  "added": [
+    "Windows desktop application",
+    "Community Preview installer",
+    "Desktop and Start Menu shortcuts",
+    "Application version information",
+    "License agreement"
+  ],
+  "changed": [],
+  "improved": [],
+  "fixed": [],
+  "removed": []
+}

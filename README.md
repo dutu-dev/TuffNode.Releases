@@ -4,6 +4,12 @@ Official public distribution repository for the TuffNode ecosystem.
 
 This repository contains public release metadata, changelogs and GitHub Release assets for TuffNode products. TuffNode source code is maintained privately and is **not open source**.
 
+## Current Community preview
+
+The current public Community preview is `v0.1.0-beta`, originally published in the legacy `TuffNode-Community` distribution repository on August 24, 2026. Its metadata is maintained here as the current prerelease authority while the existing installer remains hosted at its original GitHub Release URL.
+
+Future TuffNode binaries should be published directly as GitHub Release Assets in this repository.
+
 ## What lives here
 
 - official GitHub Releases and downloadable binaries
