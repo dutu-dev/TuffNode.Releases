@@ -46,9 +46,11 @@ TuffNode.Releases/
 │   ├── launcher.json
 │   └── orchestrator.json
 ├── changelog/
-│   └── <product>/<tag>.json
+│   └── <product>/<version>.json
 └── .github/workflows/
 ```
+
+For example, `community-v0.3.0` produces `changelog/community/v0.3.0.json` when the release notes contain structured changelog sections.
 
 `manifests/*.json` are machine-readable and can be consumed by the website or by TuffNode update checks. `CHANGELOG.md` is the human-readable cumulative changelog.
 

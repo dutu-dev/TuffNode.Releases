@@ -25,6 +25,7 @@ function parseIdentity(value) {
 }
 
 const { product, version } = parseIdentity(tag);
+const versionLabel = version.startsWith("v") ? version : `v${version}`;
 const channel = release.prerelease ? "prerelease" : "stable";
 const publishedAt = release.published_at || release.created_at;
 
@@ -98,20 +99,20 @@ if (hasStructuredChangelog) {
   const changelogEntry = {
     schemaVersion: 1,
     product,
-    version,
+    version: versionLabel,
     tag,
     publishedAt: new Date(publishedAt).toISOString(),
     ...sections,
   };
 
   await writeFile(
-    path.join(changelogDir, `${tag.toLowerCase().replace(/[^a-z0-9._-]/g, "-")}.json`),
+    path.join(changelogDir, `${versionLabel.toLowerCase().replace(/[^a-z0-9._-]/g, "-")}.json`),
     `${JSON.stringify(changelogEntry, null, 2)}\n`,
     "utf8",
   );
 
   await rebuildCumulativeChangelog();
-  console.log(`Updated public changelog for ${product} ${version}.`);
+  console.log(`Updated public changelog for ${product} ${versionLabel}.`);
 } else {
   console.log("No Added/Changed/Improved/Fixed/Removed sections found; changelog JSON was not generated.");
 }

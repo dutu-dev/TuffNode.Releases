@@ -3,7 +3,13 @@
 Each published product release may have a JSON changelog at:
 
 ```text
-changelog/<product>/<tag>.json
+changelog/<product>/<version>.json
+```
+
+For a release tagged `community-v0.3.0`, the changelog path is:
+
+```text
+changelog/community/v0.3.0.json
 ```
 
 Example:
@@ -12,7 +18,7 @@ Example:
 {
   "schemaVersion": 1,
   "product": "community",
-  "version": "0.3.0",
+  "version": "v0.3.0",
   "tag": "community-v0.3.0",
   "publishedAt": "2026-08-29T12:00:00Z",
   "added": [],
