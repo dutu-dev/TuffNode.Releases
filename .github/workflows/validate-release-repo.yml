@@ -1,0 +1,43 @@
+name: Validate release repository
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check release metadata script
+        run: node --check scripts/update-release-metadata.mjs
+
+      - name: Validate manifests
+        run: |
+          node --input-type=module <<'EOF'
+          import { readFile } from "node:fs/promises";
+
+          const products = ["community", "core", "launcher", "orchestrator"];
+          for (const product of products) {
+            const manifest = JSON.parse(await readFile(`manifests/${product}.json`, "utf8"));
+            if (manifest.schemaVersion !== 1) throw new Error(`${product}: invalid schemaVersion`);
+            if (manifest.product !== product) throw new Error(`${product}: product mismatch`);
+            if (!("stable" in manifest) || !("prerelease" in manifest)) {
+              throw new Error(`${product}: missing release channels`);
+            }
+          }
+          console.log("Release manifests are valid.");
+          EOF
