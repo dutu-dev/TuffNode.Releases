@@ -2,5 +2,21 @@
   "schemaVersion": 1,
   "product": "community",
   "stable": null,
-  "prerelease": null
+  "prerelease": {
+    "version": "0.1.0-beta",
+    "tag": "v0.1.0-beta",
+    "publishedAt": "2026-08-24T19:43:24.000Z",
+    "releaseUrl": "https://github.com/dutu-dev/TuffNode-Community/releases/tag/v0.1.0-beta",
+    "downloadUrl": "https://github.com/dutu-dev/TuffNode-Community/releases/download/v0.1.0-beta/TuffNode-CommunityPreview-v0.1.0-beta.exe",
+    "sourceRepository": "dutu-dev/TuffNode-Community",
+    "assets": [
+      {
+        "name": "TuffNode-CommunityPreview-v0.1.0-beta.exe",
+        "url": "https://github.com/dutu-dev/TuffNode-Community/releases/download/v0.1.0-beta/TuffNode-CommunityPreview-v0.1.0-beta.exe",
+        "size": 47394638,
+        "contentType": "application/x-msdownload",
+        "digest": "sha256:f14e1aa68a956142d3c278e2153585bb6fcbd15f498b3cfd2acbac55017eb61b"
+      }
+    ]
+  }
 }
